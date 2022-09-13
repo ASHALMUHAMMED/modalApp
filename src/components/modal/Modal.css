@@ -1,0 +1,51 @@
+.pop-up-section{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,.8);
+    z-index: 1;
+    display: flex;
+    justify-content: center;   
+    padding-top: 60px;
+}
+.pop-up-content{
+    width: 30%;
+    min-width: 400px;
+    position: relative;
+    animation: slidedown ease .5s;
+    height: 200px;
+    padding: 10px;
+
+}
+.close-icon{
+    position: absolute;
+    top: 5px;
+    right: 3px;
+    cursor: pointer;
+}
+.pop-up-head{
+    display: flex;
+}
+.pop-up-head h3{
+    font-size: x-large;
+}
+.pop-up-body p{
+    font-weight: lighter;
+}
+.pop-up-footer{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+@keyframes slidedown{
+    0%{
+        transform: translateY(-30rem);
+    }
+    100%{
+        transform: translateY(0rem);
+    }
+}

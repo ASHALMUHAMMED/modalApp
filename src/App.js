@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Modal from './components/modal/Modal';
 
 function App() {
+      const [showModal,setShowModal] = useState(false)
+
+      const handleShowModal = () =>{
+        setShowModal(true)
+      }
+
+      const handleCloseModal = (event) =>{
+        if(event.target.classList.contains('close-modal'))
+        setShowModal(false)
+      }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+       <section className='intro-section'>
+      <div className='intro'>
+        <h1 className=''>Lets <span>Create a Modal!!!</span></h1>
+        <p>Click the button below</p>
+        <button className='btn btn-success' onClick={handleShowModal}>OPEN MODAL</button>
+      </div>  
+    </section>
+      { showModal && <Modal onCloseModal={handleCloseModal} /> }
     </div>
   );
 }
